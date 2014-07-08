@@ -1,7 +1,6 @@
-//pre
+//pre-JS
 (function (){
-			console.log($("#overview").contents(":not(.print-only, #ccs-logos, #cnet-content, script)").text().trim());
-			if(!(c = !($("#overview").contents(":not(.print-only, #ccs-logos, #cnet-content, script)").text().trim().length > 0)))
+			if(!(ccs_js_pcr = !($("#overview").contents().not(".print-only, #cnet-content, script, [id^='ccs-']").text().trim().length > 0)))
 			{
 				$("#pdp-tab-container .tab-content").addClass("ui-tabs-hide");
 				$("#pdp-tab-container ul li").removeClass("ui-tabs-selected ui-state-active");
@@ -10,13 +9,9 @@
 			}
 })();
 
-
-
-
-//post
+//post-JS
 (function (){
-	console.log("c: " + c);
-	if(c){
+	if(ccs_js_pcr){
 			if($("#cnet-content").is(":empty"))
 			{
 				$("[href='#overview']").parent().hide();
