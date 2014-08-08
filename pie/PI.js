@@ -19,19 +19,22 @@
 		if(input)
 		{
 			           this.product.SKey = input.SKey;
+			      this.product.ProductId = input.ProductId;
+			       this.product.SMfgName = input.SMfgName;
+			         this.product.SMfgPn = input.SMfgPn;
+			      this.product.CatalogId = input.CatalogId;
 			           this.product.LCID = input.LCID;
 			         this.product.Market = input.Market;
-			            this.product.cpn = input.cpn;
-			          this.product.SkuId = input.SkuId;
 			        this.product.SEanUpc = input.SEanUpc;
+			          this.product.SkuId = input.SkuId;
 			            this.product.upc = input.upc;
 			          this.product.upc14 = input.upc14;
 			           this.product.isbn = input.isbn;
 			         this.produdct.MfgId = input.MfgId;
-			         this.product.SMfgPn = input.SMfgPn;
 			          this.product.MfgPn = input.MfgPn;
 			      this.product.userAgent = input.userAgent;
 			         this.product.ProdId = input.ProdId;
+			         this.product.ProdMf = input.ProdMf;
 			       this.product.ProdName = input.ProdName;
 			       this.product.ProdDesc = input.ProdDesc;
 			      this.product.ProdModel = input.ProdModel;

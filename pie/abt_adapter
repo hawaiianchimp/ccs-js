@@ -9,20 +9,22 @@
 (function(){
 	var adapter= {
 		           SKey: 'a62b622d', 	//subrscriber key
-		           LCID: null,  //Locale ID, language
-                 Market: null,  //market of product, 2 letter region code
-		            cpn: ccs_cc_args['cpn'], 	//customer product number
+		      ProductId: ccs_cc_args['cpn'], //product number
+		       SMfgName: ccs_cc_args['mf'], //manufacturer name
+		         SMfgPn: ccs_cc_args['pn'],  //manufacturer part number
+		      CatalogId: ccs_cc_args['ccid'], //Catalog ID
+		           LCID: ccs_cc_args['lang'],  //Locale ID, language
+                 Market: ccs_cc_args['market'],  //market of product, 2 letter region code
+		        SEanUpc: ccs_cc_args['upcean'],  //UPC/EAN code
 		          SkuId: null, 	//sku number
-		        SEanUpc: null,  //UPC/EAN code
 		            upc: $("[itemtype$='Product'] [itemprop='productID']").attr("content").match(/[0-9]+/)[0], 	//upc code
 		          upc14: null, 	//upc14 code
 		           isbn: null, 	//isbn number
 		          MfgId: null,  //manufacturer id
-		       SMfgName: $("[itemscope] [itemprop='manufacturer'] [itemprop='name']").attr("content"), //manufacturer name
-		         SMfgPn: null,  //manufacturer part number
 	       		  MfgPn: null, 	//manufacturer part number
 		   	  userAgent: null,  //user agent of browser
-		      	 ProdId: $("[itemtype$='Product'] [itemprop='productID']").attr("content"), 	//product id
+			  	 ProdId: $("[itemtype$='Product'] [itemprop='productID']").attr("content"),  //Product ID that is grabbed from page 
+			  	 ProdMf: $("[itemscope] [itemprop='manufacturer'] [itemprop='name']").attr("content"),  //Product Manufacturer grabbed from page
 		       ProdName: $("[itemtype$='Product'] [itemprop='name']").text(), 	//name of product
 	           ProdDesc: $("#product_short_description [itemprop='description']").text(), 	//description of product
 		      ProdModel: $("[itemtype$='Product'] [itemprop='model']").attr("content"), 	//model number
