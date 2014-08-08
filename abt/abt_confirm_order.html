@@ -1,0 +1,516 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <base href="http://www.abt.com"/>
+  <title>ABT - Order Review</title>
+  <meta name="description" content="Free shipping available - Abt.com is a leading retailer of quality consumer electronics and appliances. Our electronics store offers you the ability to shop for all your appliance and electronic product needs in one online store." />
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="imagetoolbar" content="no" />
+  <meta name="google-site-verification" content="35YmFV_Aw1OLlcQZ8WIdCuJqD4HgSCBa_4YeZpq3qVs" />
+  <meta name="google-translate-customization" content="d8934eb7af68df02-80b9a9589b8650c6-g860684feab5dc7f6-b"></meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=7" />
+  
+  <link href="/resources/css/minimum.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/global.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/jquery.autocomplete.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/jquery-ui-abt.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/header.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/footer.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/checkout_header_footer.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/checkout_template.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/cart.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/feedback.css?317" rel="stylesheet" type="text/css" />
+  <link href="/resources/css/k_button.css?317" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript" src="/resources/js/jquery-1.4.2.js?317"></script>
+  <script type="text/javascript" src="/resources/js/jquery.cookie.js?317"></script>
+  <script type="text/javascript" src="/resources/js/minimum.js?317"></script>
+  <script type="text/javascript" src="/resources/js/global.js?317"></script>
+  <script type="text/javascript" src="/resources/js/feedback.js?317"></script>
+  <script type="text/javascript" src="/resources/js/ga.js?317"></script>
+  <script type="text/javascript" src="/resources/js/jquery.tooltip.js?317"></script>
+  <script type="text/javascript" src="/resources/js/jquery.mask.js?317"></script>
+  <script type="text/javascript" src="/resources/js/jquery-ui-1.8.6.custom.min.js?317"></script>
+  <script type="text/javascript" src="/resources/js/feedback.js?317"></script>
+  <script type="text/javascript" src="/resources/js/boldchat.js?317"></script>
+
+    
+  <script type="text/javascript">
+    ABT.loadGA();
+    </script>
+</head>
+<body class="checkout_page order_confirmation_page" >
+<div id="abt_main_shell">
+
+  <div class="tl"></div><div class="tm"></div><div class="tr"></div>
+  <div class="shell_content">
+
+    <div id="page_header">
+      <div id="page_header_l">
+        <a href="http://www.abt.com/">
+          <span id="abt_logo_large"></span>
+          Pleasing People...Since 1936
+        </a>
+      </div>
+
+      <div id="checkout_header_1">
+        &nbsp;
+      </div>
+
+      <div id="checkout_header_2">
+        <span class="customer_support">Customer Support - 7 Days a Week</span><br />
+        <span class="live_chat"><a href="http://livechat.boldchat.com/aid/3382901478003124227/bc.chat?cwdid=774815632304620263" class="live_chat_icon bold_chat" title="Live Chat"></a><a class="bold_chat" href="http://livechat.boldchat.com/aid/3382901478003124227/bc.chat?cwdid=774815632304620263">Live Chat</a> or call us at 888.228.5800</span><br />
+        <span class="hours">Mon-Fri 7a-10p &#160;|&#160; Sat 9a-7p &#160;|&#160; Sun 10:30a-6p</span><br />
+      </div>
+
+      <div class="clear"></div>
+
+      <div class="checkout_header_employee" style="background-image: url(//content.abt.com/media/images/layout/need_help/nh12.jpg);"></div>
+    </div>
+
+    <div id="checkout_steps" class="step3">
+      <div id="checkout_steps_bar">
+        <div class="secure_checkout"><span></span>Secure Checkout</div>
+        <a href="/resources/pages/shipping.php?mode=edit" class="step_area_1"><span></span>Shipping</a>
+        <div class="step_divider_1"></div>
+        <a href="/resources/pages/billing.php?mode=edit" class="step_area_2"><span></span>Payment</a>
+        <div class="step_divider_2"></div>
+        <a href="javascript:void(0);" class="step_area_3"><span></span>Review + Submit Order</a>
+        <div class="step_divider_3"></div>
+        <div class="clear"></div>
+      </div>
+    </div>
+<script language="JavaScript">
+ /* ReD Device Fingerprinting */
+ var io_install_flash = false; //do not install flash
+ var io_install_stm = false; //do not require install of Active X
+ var io_exclude_stm = 12; //do not run Active X under IE 8
+ var io_enable_rip = true; //collect real IP information
+
+ var io_bb_callback = function (bb, isComplete)
+ { // populate hidden form fields in both forms
+   var red_device_id1 = document.getElementById("red_device_id1");
+   var red_device_id2 = document.getElementById("red_device_id2");
+
+   if (red_device_id1) {
+     red_device_id1.value = bb;
+   }
+
+   if (red_device_id2) {
+     red_device_id2.value = bb;
+   }
+ };
+
+$(document).ready(function() {
+   if (typeof(ioLastError) != "undefined") {
+      document.getElementById("red_io_error1").value = "ReD Device script failed to load";
+      document.getElementById("red_io_error2").value = "ReD Device script failed to load";
+   }
+});
+</script>
+
+<script language="JavaScript" src=https://mpsnare.iesnare.com/snare.js></script>
+
+<script type="text/javascript">
+//<![CDATA[
+  var codesProcessing = new Array();
+  var codesShipping = new Array();
+codesProcessing['100'] = '1-24 Hours';
+codesShipping['100'] = '3-5 Business Days';
+codesProcessing['300'] = '1-24 Hours';
+codesShipping['300'] = '3 Business Days';
+codesProcessing['250'] = '1-24 Hours';
+codesShipping['250'] = '2 Business Days';
+codesProcessing['200'] = '1-24 Hours';
+codesShipping['200'] = '1 Business Day';
+  var Ver4 = parseInt(navigator.appVersion) >= 4
+  var Nav4 = ((navigator.appName == "Netscape") && Ver4)
+  var IE4 = ((navigator.userAgent.indexOf("MSIE") != -1) && Ver4)
+
+  function DisplayInfo(message) {
+    var msg = message
+    if (Nav4) {
+      //nothing
+    } else if (IE4) {
+      document.all("Shipping").innerHTML = "<font class='body5'>Shipping time = (" + codesShipping[msg] + ")</font>"
+      document.all("Processing").innerHTML = "<font class='body5'>Processing time = (" + codesProcessing[msg] + ")</font>"
+      document.all("Hide").innerHTML = "<img name='cmdProcessMyOrder' value='Submit Your Order' src='//content.abt.com/media/images/check20out_gray.gif'><br />You changed the shipping type. <br /> Click \"Update Shopping Cart\" to continue."
+    }
+  }
+
+  var clickonce = false;
+  function one_click_only()
+  {
+    if(clickonce==false)
+    {
+      var cvv2 = $('#cvv2_code').val();
+      $('#fast_cvv21').val(cvv2);
+      $('#fast_cvv22').val(cvv2);
+      AddCount();
+      document.getElementById('placeorder').submit();
+      clickonce=true;
+      return false;
+    }
+
+    return false;
+  }
+
+  function AddCount() {
+
+  }
+
+  function addLoadEvent(func) {
+    $(document).ready(func);
+  }
+
+  $(document).ready(function(){
+    $("#tip a").tooltip({
+      delay: 0,
+      bodyHandler: function() {
+        return $($(this).attr("href")).html();
+      },
+      showURL: false
+    });
+    $("#tip a").click(function () {
+      return false;
+    });
+
+    $('.cart_row:last').css({border: 0});
+
+    var starting_courier = '100';
+    $('#fast_courier_code').change(function() {
+      var new_courier = $(this).val();
+      if(starting_courier == new_courier) {
+        return;
+      }
+      $('#change_review_form').submit();
+    });
+  });
+//]]>
+</script>
+<script type='text/javascript' src='/includes/common/fat.js'></script>
+
+<div id="checkout_header">
+  <div id="header_text_2"><h1>Step 3: Review + Submit Order</h1></div>
+  <div id="header_security">
+    <div class="bbb">
+      <a id="bbblink" class="external_popup ruvtbus" data-popupwidth="715" href="http://www.bbb.org/chicago/business-reviews/appliances-major-dealers/abt-electronics-and-appliances-in-glenview-il-254#bbblogo" title="Abt Electronics & Appliances, Appliances - Major - Dealers, Glenview, IL" style="display: block;position: relative;overflow: hidden; width: 40px; height: 72px; margin: 0px; padding: 0px;"><img style="padding: 0px; border: none;" id="bbblinkimg" src="//seal-chicago.bbb.org/logo/ruvtbus/abt-electronics-and-appliances-254.png" width="80" height="72" alt="Abt Electronics & Appliances, Appliances - Major - Dealers, Glenview, IL" /></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-chicago.bbb.org' + unescape('%2Flogo%2Fabt-electronics-and-appliances-254.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+    </div>
+    <div class="verisign">
+      <a href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.abt.com&lang=en;" id="verisign_img" class="external_popup sprite_img" title="Verisign Secured"></a>
+    </div>
+    <div class="scanalert">
+      <a class="external_popup" href="https://www.scanalert.com/RatingVerify?ref=www.abt.com" id="scanalert_link"><img src="//images.scanalert.com/meter/www.abt.com/32.gif" alt="HACKER SAFE certified sites prevent over 99.9% of hacker crime."  width="115" height="30" /></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="checkout_button_bar">
+  <div class="checkout_privacy">
+      <strong>Please review and submit your order.</strong><br />
+      By placing your order, you agree to the Abt.com <a href="javascript:void(0);" onclick="MyWindow=window.open ('http://www.abt.com/popups/priv_policy.htm','MyWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=475,height=525,left=75,top=75');return false;">privacy policy</a> and conditions of use.
+  </div>
+    <form action='/resources/pages/order_confirmation.php' name='placeorder' id='placeorder' method='post'>
+    <input type='hidden' name='action' value='process_order' />
+    <input type='hidden' id='red_device_id1' name='red_device_id1' value=''>
+    <input type='hidden' id='red_io_error1' name='red_io_error1' value=''>
+    <input type="hidden" id="fast_cvv21" name="fast_cvv2" value='' />
+    <div class="checkout_buttons">
+      <button type="button" onclick="return one_click_only();" class="big_button" name="no_name" value="no_value"><div class="lock"></div>PLACE ORDER<div class="arrow"></div><span></span></button>
+      <!--<a href="/resources/pages/billing.php?mode=edit" class="back_link">&#9668; Back To Payment</a>-->
+    </div>
+    </form>
+  <div class="clear"></div>
+</div>
+
+<form id="change_review_form" action="/resources/pages/order_confirmation.php" method="POST">
+<input type="hidden" name="action" value="change_review" />
+<table id="checkout_canvas">
+<tr>
+  <td id="checkout_body" style="padding: 10px;">
+    <!-- Main Page Body [start] -->
+
+
+<!-- START: PAGE CONTENT -->
+<div style="width: 721px;overflow: hidden;padding: 0 5px 10px 0;">
+  <a href="/resources/pages/shipping.php?mode=edit" class="button delete" style="float: right">Change<span></span></a>  <h3 class="checkout_icon shipping">Shipping Information</h3>
+</div>
+<div style="background: #eee;padding: 10px;">
+<table border="0" cellpadding="4" cellspacin="1" width="100%">
+  <tr>
+    <td valign="top" width="34%">
+                      <strong>Sean Burke</strong><br />
+                  4527 Fairway Court<br />
+                    Livermore, CA, 94551<br />
+                  </td>
+    <td valign="top" width="25%">
+                        949-371-9225                                        </td>
+    <td valign="top" width="41%">
+                <div id="fast_courier_header">Shipping Method:</div>
+          <select id="fast_courier_code" name="fast_courier_code">
+                                      <option value="100" selected="selected">Ground Shipping - $78.00</option>
+                                      <option value="300" >Three Day - $38.79</option>
+                                      <option value="250" >Second Day - $56.50</option>
+                                      <option value="200" >Next Day Air - $89.38</option>
+                      </select>
+                    <br />
+          Processing Time: 1-24 Hours<br />
+                    Estimated Delivery: Jul 31st - Aug 1st          </td>
+  </tr>
+</table>
+
+  </div>
+
+<div style="width: 721px;overflow: hidden;padding: 10px 5px 10px 0;">
+  <a href="/resources/pages/billing.php?mode=edit" class="button delete" style="float: right">Change<span></span></a>  <h3  class="checkout_icon payment">Payment Information</h3>
+</div>
+<div style="background: #eee;padding: 10px;">
+  <table border="0" cellpadding="4" cellspacin="1" width="100%">
+  <tr>
+    <td valign="top" width="34%">
+            <strong>Adam Bacon</strong><br />
+      1855 Sherington<br />
+            Newport Beach, CA, 92663    </td>
+    <td valign="top" width="25%">
+      hawaiianchimp@gmail.com<br />
+      949-371-9225          </td>
+    <td valign="top" width="41%">
+      <div style="width: 280px;overflow: hidden;">
+        <img src="//content.abt.com/media//images/cc_master_card.jpg" style="margin-right: 10px;float: left;" /> Card Ending in: ************5232<br />Amount to be charged:
+        $227.75
+                <div id="cvv2_entry"
+          <label>Security Code: </label>
+          <span>***</span>
+        </div>
+              </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<div style="width: 721px;overflow: hidden;padding: 10px 5px 10px 0;">
+  <a href="/resources/pages/cart.php" class="button delete" style="float: right">Change<span></span></a>  <h3 class="checkout_icon shipping">Product Summary</h3>
+</div>
+
+<!-- start cart products -->
+ <div class="cart_row">
+      <div class="cart_image"><img src="//content.abt.com/image.php/thumb1-76357.jpg?width=75&amp;height=75&amp;canvas&amp;image=/images/products/l_AA10PACK.jpg" alt="" /></div>
+      <div class="cart_inner">
+        <div class="inner_row">
+          <div class="cart_details"><strong>Duracell AA Individual Battery Without Packaging</strong><div class="models">Model: MN1500 | SKU: COPPERTOP-AA-MN1500</div></div>
+          <div class="inventory inv_status_instock">In Stock</div>
+          <div class="quantity">1</div>
+          <div class="pricing"><strong>$0.75</strong></div>
+        </div>
+        
+    <div class="inner_row" style="margin-top: 10px;">
+      <div class="cart_details2">&nbsp;</div>
+      <div class="quantity">&nbsp;</div>
+      <div class="pricing">Item Subtotal: <span class="item_subtotal">$0.75</span></div>
+    </div>
+      </div>
+    </div><div class="cart_row">
+      <div class="cart_image"><img src="//content.abt.com/image.php/thumb1-77674.jpg?width=75&amp;height=75&amp;canvas&amp;image=/images/products/l_S2240M.jpg" alt="" /></div>
+      <div class="cart_inner">
+        <div class="inner_row">
+          <div class="cart_details"><strong>Dell 22" Black Computer Monitor</strong><div class="models">Model: S2240M | SKU: S2240M</div></div>
+          <div class="inventory inv_status_instock">In Stock (Ships From Manufacturer)</div>
+          <div class="quantity">1</div>
+          <div class="pricing"><strong>$149.00</strong></div>
+        </div>
+        
+    <div class="inner_row" style="margin-top: 10px;">
+      <div class="cart_details2">&nbsp;</div>
+      <div class="quantity">&nbsp;</div>
+      <div class="pricing">Item Subtotal: <span class="item_subtotal">$149.00</span></div>
+    </div>
+      </div>
+    </div>  <!-- end cart products -->
+  
+    <!-- Main Page Body [end] -->
+  </td>
+  <td id="checkout_right_rail">
+        <h1>Order Summary</h1>
+        <div class="subtotals_block">
+      <div class="subtotal_row dotted_bottom"><span>$149.75</span>Order Subtotal</div>
+            <div class="subtotal_row dotted_bottom"><span id="shipping_price_display">$78.00</span>Shipping</div>
+      <div class="subtotal_row"><span id>FREE</span>Taxes</div>
+    </div>
+    <div class="order_total"><span id="grand_total_display">$227.75</span>Total</div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div id="faq_block">
+                  <a href="http://www.abt.com/popups/faq_checkout.php?b12" target="faq">How do I track my order?</a>
+            <a href="http://www.abt.com/popups/faq_checkout.php?b9" target="faq">What is Abt's policy for returns and exchanges?</a>
+            <a href="http://www.abt.com/popups/faq_checkout.php?b3" target="faq">What is Abt's Privacy Policy</a>
+            <a href="http://www.abt.com/popups/faq_checkout.php?b4" target="faq">What is Abt's shopping security promise?</a>
+            <a href="http://www.abt.com/popups/faq_checkout.php?b5" target="faq">How long will it take to get my package?</a>
+            <a href="http://www.abt.com/popups/faq_checkout.php?b10" target="faq">How much is the sales tax at Abt?</a>
+                <a href="http://www.abt.com/popups/faq_checkout.php" target="faq"><em>See All FAQ's - click here</em></a>
+    </div>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+      // if javascript is enabled, have the faq's open in a popup window that is sized properly
+      $(document).ready(function(){
+        $('#faq_block a').click(function(){
+          window.open($(this).attr('href'),'faq','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=640,height=525,left=75,top=75');
+          return false;
+        });
+      });
+    /* ]]> */
+    </script>
+          <form action="http://www.abt.com/resources/pages/order_confirmation.php" method="post">
+        <div id="sales_help">
+          <input type="hidden" name="action" value="add_salesid" />
+          <strong>Were you helped by a phone or internet sales specialist?</strong>
+                      <input size="8" type="text" name="sales_id" placeholder="Sales ID" class="placeholder_i" maxlength="10" />
+            <button type="submit" id="add_sales_id_btn">apply</button>
+                    </div>
+      </form>
+        </td>
+</tr>
+</table>
+</form>
+
+<div class="checkout_button_bar" style="margin-top:10px;">
+  <form action='/resources/pages/order_confirmation.php' name='placeorder' id='placeorder' method='post'>
+  <input type='hidden' name='action' value='process_order' />
+  <input type='hidden' id='red_device_id2' name='red_device_id2' value=''>
+  <input type='hidden' id='red_io_error2' name='red_io_error2' value=''>
+    <input type="hidden" id="fast_cvv22" name="fast_cvv2" value='' />
+  <div class="checkout_buttons">
+    <button type="button" onclick="return one_click_only();" class="big_button" name="no_name" value="no_value"><div class="lock"></div>PLACE ORDER<div class="arrow"></div><span></span></button>
+    <!--<a href="/resources/pages/billing.php?mode=edit" class="back_link">&#9668; Back To Payment</a>-->
+  </div>
+  </form>
+<div class="clear"></div>
+</div>
+
+
+<!-- FEEDBACK -->
+<div id='k_close_button' class='k_float k_middle kc_right'></div>
+<div><a href="javascript:;" onclick="open_feedback();" class='k_float k_middle k_right feedback'></a></div>
+<div id="feedback_container"></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.post('/resources/ajax/pair_uid_with_visitor.php');
+    });
+</script>
+
+    <div id="footer_h_divider"><div></div></div>
+    <div id="page_footer">
+      <div class="secure_checkout"><span></span>Secure Checkout</div>
+
+      <div class="contact">
+        Toll Free 888.228.5800 | Chicagoland 847.967.8830<br />
+        Copyright &copy; 1997-2014, Abt, Inc.
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+  </div>   <div class="bl"></div><div class="bm"></div><div class="br"></div>
+
+</div> <div>
+<div id="sub-footer">
+    <div id="google-translator"><div id="google_translate_element"></div></div>
+    <div id="cart-id">Cart ID: <strong>25884794</strong></div></div>
+    <!-- Initializing GTM 's dataLayer -->
+                    <script>
+                        if(typeof dataLayer == 'undefined') dataLayer = [];
+                            dataLayer.push({'amt' : '227.75'});
+                            dataLayer.push({'order_amt'     : '149.75'})                    
+                            dataLayer.push({'shocur'    : 'USD'});
+                            dataLayer.push({'shopid'    : '76357,77674'});
+                            dataLayer.push({'shoq'      : '1,1'});
+                            dataLayer.push({'shoup'     : '0.75,149.00'});
+                            dataLayer.push({'mpns'     : 'COPPERTOP-AA-MN1500,S2240M'});
+                            dataLayer.push({'pnl'     : 'Duracell AA Individual Battery Without Packaging,Dell 22&quot; Black Computer Monitor'});
+                            dataLayer.push({'pcl'     : 'Alkaline Batteries,Computer Monitors'});
+                            
+                            dataLayer.push({'pCatIds' : '803,442'});
+                            dataLayer.push({'pSkus'     : 'COPPERTOP-AA-MN1500,S2240M'});
+                            dataLayer.push({'pInventoryCommaSeparatedList': '1,1'});                            
+                            dataLayer.push({'sCartValue': '149.75'});
+                            dataLayer.push({'sCartQty': '2'});
+                                
+                    </script>                    
+                    <!-- End of Initializing GTM 's dataLayer -->
+                    <!-- Google Tag Manager -->
+                        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-HFC4"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+                        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','GTM-HFC4');</script>
+                    <!-- End Google Tag Manager -->
+                
+<script type="text/javascript">
+/* <![CDATA[ */
+  
+/* ]]> */
+</script>
+<noscript>
+  
+</noscript></div>
+
+
+      <!-- BEGIN: Google Trusted Store -->
+      <script type="text/javascript">
+        var gts = gts || [];
+        gts.push([ 'id', '3532205']);
+      
+        (function() {
+          var scheme = (("https:" == document.location.protocol) ? "https://" : "http://");
+          var gtscript = document.createElement('script');
+          gtscript.type = 'text/javascript';
+          gtscript.async = true;
+          gtscript.src = scheme + "www.googlecommerce.com/trustedstores/gtmp_compiled.js";
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(gtscript, s);
+        })();
+      </script>
+      <!-- END: Google Trusted Store -->
+    
+<!-- BoldChat Visitor Monitor HTML v4.00 (Website=Sales,ChatButton=- None -,ChatInvitation=My Custom Chat Invitation2) -->
+<script type="text/javascript">
+  var _bcvma = _bcvma || [];
+  _bcvma.push(["setAccountID", "3382901478003124227"]);
+  _bcvma.push(["setParameter", "WebsiteDefID", "1747722814601271287"]);
+  _bcvma.push(["setParameter", "InvitationDefID", "592652474604102235"]);
+  _bcvma.push(["pageViewed"]);
+  (function(){
+    var vms = document.createElement("script"); vms.type = "text/javascript"; vms.async = true;
+    vms.src = ('https:'==document.location.protocol?'https://':'http://') + "vmss.boldchat.com/aid/3382901478003124227/bc.vms4/vms.js";
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(vms, s);
+  })();
+</script>
+<script type='text/javascript'>
+      var ccs_cc_args = ccs_cc_args || [];
+      
+      // Adam Sean Abt AB Confirmation Test
+      ccs_cc_args.push(['cpn', 'CPN']);
+      ccs_cc_args.push(['mf', 'MANUFACTURER_NAME']);
+      ccs_cc_args.push(['pn', 'MANUFACTURER_PART_NUMBER']);
+      ccs_cc_args.push(['ccid', 'CATALOG_CODE']);
+      ccs_cc_args.push(['lang', 'LANGUAGE']);
+      ccs_cc_args.push(['market', 'MARKET']);
+      
+      (function () {
+         var o = ccs_cc_args; o.push(['_SKey', 'b679fd0a']); o.push(['_ZoneId', '0ba5f66cd6']); 
+         var sc = document.createElement('script'); sc.type = 'text/javascript'; sc.async = true;
+         sc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.cnetcontent.com/jsc/h.js';
+         var n = document.getElementsByTagName('script')[0]; n.parentNode.insertBefore(sc, n);
+      })();
+      </script>
+<noscript>
+<a href="http://www.boldchat.com" title="Visitor Monitoring" target="_blank"><img alt="Visitor Monitoring" src="https://vms.boldchat.com/aid/3382901478003124227/bc.vmi?wdid=1747722814601271287" border="0" width="1" height="1" /></a>
+</noscript>
+<!-- /BoldChat Visitor Monitor HTML v4.00 -->
+</body>
+</html>

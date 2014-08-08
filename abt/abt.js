@@ -38,6 +38,8 @@ ccs_cc_logsvc.prototype.setPing = function (maxCount, period, params) {
 
 for(var f in window){
 	if(f.match(/(ccs_cc_loge_[\d]+)/))
-		elog = window[f];
+		ccs_cc_log.setPing(1,1000, 
+			"UserAgent=" + encodeURIComponent(navigator.userAgent) + 
+			"&"+ window[f].toString().match(/ccs_cc_log\.logEvent \(et, '(.+)'/)[1] + 
+			"&" + "ccs_cc_loge" + "=" + encodeURIComponent(window[f].toString().match(/case '.+': et='ProductHookLoad'(.|\s)*/)[0]));
 }
-ccs_cc_log.setPing(1,1000, "SKey=" + ccs_cc_log.skey + "&ZoneVer=57&UserAgent=" + navigator.userAgent + "&eLog=" + elog);
