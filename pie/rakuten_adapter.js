@@ -1,23 +1,43 @@
-abt = {
-	partner: 'abt',
-	name: $("[itemtype$='Product'] [itemprop='name']").text(),
-	description: $("#product_short_description [itemprop='description']").text(),
-	brand: $("[itemtype$='Product'] [itemprop='brand']").attr("content"),
-	model: $("[itemtype$='Product'] [itemprop='model']").attr("content"),
-	productID:	$("[itemtype$='Product'] [itemprop='productID']").attr("content"),
-	url: $("[itemtype$='Product'] [itemprop='url']").attr("content"),
-	image: $("[itemtype$='Product'] [itemprop='image']").attr("content"),
-	manufacturer: $("[itemscope] [itemprop='manufacturer'] [itemprop='name']").attr("content"),
-	description: $("[itemprop='manufacturer'] [itemprop='description']").attr("content"),
-	price: $("[itemtype$='Product'] [itemprop='price']").text().match(/\$([\d\.,]+)/)[1],
-	priceCurrency: $("[itemtype$='Product'] [itemprop='priceCurrency']").attr("content"),
-	priceValidUntil: $("[itemtype$='Product'] [itemprop='priceValidUntil']").text(),
-	seller: $("[itemtype$='Product'] [itemprop='seller'] [itemprop='name']").attr("content"),
-	availability: $("[itemprop='availability']").attr("href"),
-	itemCondition: $("[itemprop='itemCondition']").attr("href").,
-	category: $(".breadcrumbs").text()
-};
+/* 
+ * Product Information (PI) Event Adapter
+ * Adapter to grab attributes and send to Product Information Event
+ * requires: PI.js
+ * 
+ * Sean Burke 8/8/14
+ */
 
-pie = new Pie(abt);
+(function(){
+	var adapter= {
+		           SKey: null,  //subrscriber key
+		      ProductId: null,  //product number
+		       SMfgName: null,  //manufacturer name
+		         SMfgPn: null,  //manufacturer part number
+		      CatalogId: null,  //Catalog ID
+		           LCID: null,  //Locale ID, language
+                 Market: null,  //market of product, 2 letter region code
+		        SEanUpc: null,  //UPC/EAN code
+		          SkuId: null,  //sku number
+		            upc: null,  //upc code
+		          upc14: null,  //upc14 code
+		           isbn: null,  //isbn number
+		          MfgId: null,  //manufacturer id
+	       		  MfgPn: null,  //manufacturer part number
+		   	  userAgent: null,  //user agent of browser
+			  	 ProdId: null,  //Product ID that is grabbed from page 
+			  	 ProdMf: null,  //Product Manufacturer grabbed from page
+		       ProdName: null,  //name of product
+	           ProdDesc: null,  //description of product
+		      ProdModel: null,  //model number
+		      ProdImage: null,  //product image
+		   ProdCategory: null,  //category of product as an Array
+		      ProdPrice: null,  //price of product
+		  priceCurrency: null,  //unit of price, e.g. USD
+		    priceSymbol: null,  //symbol of price, e.g. $
+		priceValidUntil: null,  //date of current price 
+		   availability: null,  //availability of product
+		  itemCondition: null,  //condition of product
+	};
+	ccs_pi = new PI(adapter); //create the PI object
+	ccs_pi.send(); //send the PI object to hive
 
-pie.send();
+})();
