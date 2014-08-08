@@ -37,7 +37,7 @@
 		   availability: null,  //availability of product
 		  itemCondition: null,  //condition of product
 	};
-	var pi = new PI(adapter); //create the PI object
-	pi.send(); //send the PI object to hive
+	ccs_pi = new PI(adapter); //create the PI object
+	ccs_pi.send(); //send the PI object to hive
 
 })();
