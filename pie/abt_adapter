@@ -37,7 +37,7 @@
 		   availability: $("[itemprop='availability']").attr("href").match(/schema\.org\/(.+)/)[1], 	//availability of product
 		  itemCondition: $("[itemprop='itemCondition']").attr("href").match(/schema\.org\/(.+)/)[1], 	//condition of product
 	};
-	var pi = new PI(adapter); //create the PI object
-	pi.send(); //send the PI object to hive
+	ccs_pi = new PI(adapter); //create the PI object
+	ccs_pi.send(); //send the PI object to hive
 
 })();

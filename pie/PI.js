@@ -30,7 +30,7 @@
 			            this.product.upc = input.upc;
 			          this.product.upc14 = input.upc14;
 			           this.product.isbn = input.isbn;
-			         this.produdct.MfgId = input.MfgId;
+			          this.product.MfgId = input.MfgId;
 			          this.product.MfgPn = input.MfgPn;
 			      this.product.userAgent = input.userAgent;
 			         this.product.ProdId = input.ProdId;
