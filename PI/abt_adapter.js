@@ -19,8 +19,8 @@
 	var adapter= {
 		           SKey: 'a62b622d', 	//subscriber key
 		      ProductId: ccs_cc_args['cpn'] || ccs_cc_pi_args['cpn'], //product number
-		       SMfgName: ccs_cc_args['mf'] || ccs_cc_pi_args['mf'], //manufacturer name
-		         SMfgPn: ccs_cc_args['pn'] || ccs_cc_pi_args['pn'],  //manufacturer part number
+		       SMfgName: ccs_cc_args['mf'] || ccs_cc_pi_args['mf'] || $("[itemscope] [itemprop='manufacturer'] [itemprop='name']").attr("content"), //manufacturer name
+		         SMfgPn: ccs_cc_args['pn'] || ccs_cc_pi_args['pn'] || $("[itemtype$='Product'] [itemprop='model']").attr("content"),  //manufacturer part number
 		      CatalogId: ccs_cc_args['ccid'] || ccs_cc_pi_args['ccid'], //Catalog ID
 		           LCID: ccs_cc_args['lang'] || ccs_cc_pi_args['lang'],  //Locale ID, language
                  Market: ccs_cc_args['market'] || ccs_cc_pi_args['market'],  //market of product, 2 letter region code
