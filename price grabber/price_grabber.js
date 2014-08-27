@@ -1,131 +1,80 @@
+/*  
+ * CCS Logos Price Grabber 
+ * Description: This function will grab the price from the price on the products page
+ * Author: Sean Burke
+ * Date: 8/27/14
+ */
 
-//the price information on different websites
-var costco_price = document.querySelector('input[name="price"]').value;
-var newegg_price = document.querySelector('[itemprop="price"]').getAttribute('content');
-var rakuten_price = document.querySelector('#ctoPrice').innerHTML;
-var zones_price = $(".productDetails .redPrice").text().replace(/(^\s*)|(\s*)/g,'');
-var zones_price = document.querySelector(".productDetails .redPrice").innerHTML.replace(/\s/g,'');
-var pcm_price = document.querySelector('[itemprop="price"]').innerHTML;
+(function(){
 
-//adds a temporary button to the dom from the console for debugging purposes
-function addPriceButton(){
-        var s = '<button id="testbutton">ADD PRICE BUTTON</button>';
-        var div = document.createElement('div');
-        div.innerHTML = s;
-        var body = document.querySelector('.CCLP-office2013-mid-text').appendChild(div);
-        var button = document.querySelector('#testbutton').addEventListener('click', clickHandler);
-}
+    //use this function to get the price from the linked product page
+    grabPrice(function(doc){
+        //price select for Zones.com
+        var zones_price = doc.querySelector(".productDetails .redPrice").innerHTML.match(/[\d\.,]+/);
+        return "Price: " + zones_price;
+    });
 
-//event handler to be tied to the event listner on the button
-function clickHandler(e){
-        e.preventDefault();
-        $('[class^="CCLP"][class*="price"]').each(addPrice);
-        //console.log('button pushed');
-}
+    //use this function if you have the price, and want to pass it into the function
+    /*
+    var price = "100.00"
+    grabPrice("Price: " + price)
+    */
 
-//ajax call to get the price from the linked content
-function addPrice(i, el){
-        var start = new Date().getTime();
-        url = $(el).parent().find('[class^="CCLP"][class*="info"] a').attr('href');
-        $(el).append($("<label class='price_label'></label>"));
-        $(el).find(".price_label").load(url + (" .productDetails .redPrice"), onSuccess);
-        var end = new Date().getTime();
-        console.log(end-start);
-}
 
-//success handler, does nothing at the moment
-function onSuccess(response, status, xhr){
-        console.log("responding to AJAX");
-        console.log(response);
-        console.log(status);
-        console.log(xhr);
-        console.log(response.replace(/(^\s*)|(\s*)/g,''));
-}
-addPriceButton();
 
-//without jQuery
-//adds a temporary button to the dom from the console for debugging purposes
-function addPriceButton(){
-        var div = document.createElement('div');
-        div.innerHTML = '<button id="testbutton">ADD PRICE BUTTON</button>';
-        document.querySelector('.CCLP-office2013-mid-text').appendChild(div); //add button somewhere in document
-        document.querySelector('#testbutton').addEventListener('click', clickHandler);
-}
+    /* ------------------------------------------------------------------
+     *  Price Grabber functions below, no need to modify below this line 
+     * ------------------------------------------------------------------
+     */ 
 
-//event handler to be tied to the event listner on the button
-function clickHandler(e){
-        e.preventDefault();
-        console.log('button pushed');
+    function grabPrice(selectPrice){
+
+        //get all the price
         priceGetAll();
-}
 
-//ajax call to get all the prices from the linked content
-function priceGetAll(){
-        priceElements = document.querySelectorAll('[class^="CCLP"][class*="price"]'); //select the price div
-        console.log(priceElements);
-        Array.prototype.forEach.call(priceElements, getPrice);
-}
+        //ajax call to get all the prices from the linked content
+        function priceGetAll(){
+            priceElements = document.querySelectorAll('[class^="CCLP"][class*="price"]'); //select the price div
+            Array.prototype.forEach.call(priceElements, getPrice);
+        }
 
-//individual function to get one price via AJAX call
-function getPrice(el, i){
-        var request = new XMLHttpRequest();
-        var url = el.parentNode.querySelector('[class^="CCLP"][class*="info"] a').getAttribute('href'); //get the link selector
-        console.log(url);
-        console.log(request);
+        //individual function to get one price via AJAX call
+        function getPrice(el, i){
+            if (typeof selectPrice == "function")
+            {
+                var request = new XMLHttpRequest();
+                var url = el.parentNode.querySelector('[class^="CCLP"][class*="info"] a').getAttribute('href'); //get the link selector
 
-        request.onreadystatechange = function() {
-                console.log("starting onload");
-                //var start = new Date().getTime();
-                if (request.status >= 200 && request.status < 400){
-                    // Success!
-                    response = request.response;
-                    //console.log(response);
-                        var page = document.createElement('body');
-                        page.innerHTML = response;
-                        var price = page.querySelector(".productDetails .redPrice").innerHTML.replace(/\s/g,'');
-                        var label = document.createElement('label');
-                        label.innerHTML = price;
-                        label.className += ' ' + 'redPrice';
-                        el.appendChild(label);
-                }
-                else {
-                    // We reached our target server, but it returned an error
-                    console.log("onload error");
-                    console.log(request);
-                }
-                //var end = new Date().getTime();
-                //console.log(end-start);
-        };
+                request.onreadystatechange = function() {
+                    //var start = new Date().getTime();
+                    if(request.readyState == 4)
+                    {
+                        if (request.status >= 200 && request.status < 400){
+                            //success! create a response body to pass to selectPrice as document to run selector
+                            var page = document.createElement('body');
+                            page.innerHTML = request.response;
+                            //if selector is a function, selectPrice, or if not a function, return it, else keep it 
+                            el.innerHTML = selectPrice(page);
+                        }
+                        else {
+                            // server reached, but responded with error code 404, or 500 for example
+                        }
+                    }
+                    //var end = new Date().getTime();
+                    //console.log(end-start);
+                };
 
-        request.onerror = function(){
-                console.log("error");
-                console.log(request);
-                // There was a connection error of some sort
-        };
+                request.onerror = function(){
+                    // There was a connection error of some sort
+                };
 
-        request.open('GET', url, true);
-        request.send();
-}
-addPriceButton();
-
-
-$('[class^="CCLP"][class*="price"]').each(function(){
-        url = $(this).parent().find('[class^="CCLP"][class*="info"] a').attr('href');
-        $(this).load( url + " .productDetails .redPrice");
-});
-
-
-function encodeCBS(string)
-{
-        return "A"+btoa(string);
-}
-
-function decodeCBS(string)
-{
-        return atob(string.substring(1, string.length));
-}
-
-
-
-
-//Sandbox feature
+                request.open('GET', url, true);
+                request.send();
+            }
+            else if (typeof selectPrice == "string")
+            {
+                el.innerHTML = selectPrice;
+            }
+        }
+    };
+})();
