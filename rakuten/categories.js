@@ -1,0 +1,1 @@
+document.querySelector(".pdpMiscControl02").innerText.split(">").map(function(a){ return a.trim()}).slice(2, -1);
